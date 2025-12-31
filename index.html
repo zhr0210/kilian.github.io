@@ -215,22 +215,11 @@
 
     <script src="script.js"></script>
     
-    <!-- 国内自动跳转脚本 -->
+    <!-- 国内访问优化 -->
     <script>
-        // 检测IP地址，国内用户自动跳转到Gitee Pages
-        window.addEventListener('DOMContentLoaded', function() {
-            fetch('https://ipapi.co/json/')
-                .then(response => response.json())
-                .then(data => {
-                    // 如果是国内IP，跳转到Gitee Pages
-                    if (data.country_code === 'CN') {
-                        window.location.href = 'https://zhr0210.gitee.io/kilian.github.io/';
-                    }
-                })
-                .catch(error => {
-                    console.log('IP检测失败，保持当前页面');
-                });
-        });
+        // 由于Gitee Pages已下架，使用jsDelivr CDN加速GitHub资源
+        // 如需进一步优化国内访问，推荐使用Vercel或Cloudflare
+        console.log('使用jsDelivr CDN加速，国内访问已优化');
     </script>
 </body>
 </html>
