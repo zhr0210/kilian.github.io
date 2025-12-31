@@ -1,0 +1,638 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础样式设置 */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏样式 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 20px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    margin-left: 40px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #222;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* 英雄区域样式 */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1493770348161-369560ae357d?w=1920&h=1080&fit=crop') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #222;
+}
+
+/* 作品集区域样式 */
+.portfolio {
+    padding: 120px 0;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 80px;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.portfolio-item {
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-info {
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-info {
+    transform: translateY(0);
+}
+
+.portfolio-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.portfolio-info p {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* 关于区域样式 */
+.about {
+    padding: 120px 0;
+    background-color: #f8f8f8;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-image {
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-text .section-title {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.about-description {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 48px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 联系区域样式 */
+.contact {
+    padding: 120px 0;
+    background-color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-info .contact-description {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.contact-details {
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #222;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.social-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.social-link:hover {
+    color: #222;
+}
+
+.social-link:hover::after {
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.1);
+    background-color: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form .btn {
+    background-color: transparent;
+    color: #222;
+    border-color: #222;
+    align-self: flex-start;
+}
+
+.contact-form .btn:hover {
+    background-color: #222;
+    color: white;
+}
+
+/* 页脚样式 */
+.footer {
+    padding: 60px 0;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-text {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    /* 导航栏 */
+    .nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-list li {
+        margin: 0 15px;
+    }
+
+    /* 英雄区域 */
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    /* 作品集 */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* 关于区域 */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-text .section-title {
+        text-align: center;
+    }
+
+    .about-stats {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    /* 联系区域 */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-info .contact-description {
+        text-align: center;
+    }
+
+    .contact-details {
+        text-align: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .contact-form .btn {
+        align-self: center;
+    }
+
+    /* 统计数据 */
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 全局 */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* 导航栏 */
+    .header {
+        padding: 15px 0;
+    }
+
+    .logo a {
+        font-size: 20px;
+    }
+
+    /* 英雄区域 */
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    /* 区块标题 */
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 50px;
+    }
+
+    /* 作品集 */
+    .portfolio {
+        padding: 80px 0;
+    }
+
+    .portfolio-image {
+        height: 300px;
+    }
+
+    /* 关于区域 */
+    .about {
+        padding: 80px 0;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+
+    /* 联系区域 */
+    .contact {
+        padding: 80px 0;
+    }
+
+    .contact-info .contact-description {
+        font-size: 16px;
+    }
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 加载动画 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* 标题下划线效果 */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #333;
+    margin: 20px auto 0;
+}
+
+.about-text .section-title::after {
+    margin-left: 0;
+}
