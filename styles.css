@@ -90,7 +90,7 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://cdn.jsdelivr.net/gh/zhr0210/kilian.github.io/images/jiudian-4k-optimized.jpg') center/cover no-repeat;
+                url('images/jiudian-4k-optimized.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;

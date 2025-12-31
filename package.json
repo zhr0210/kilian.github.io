@@ -1,0 +1,8 @@
+{
+  "name": "kilian-photography",
+  "version": "1.0.0",
+  "description": "摄影作品集网站",
+  "scripts": {
+    "build": "mkdir -p dist && cp -r *.html *.css *.js images dist/"
+  }
+}
